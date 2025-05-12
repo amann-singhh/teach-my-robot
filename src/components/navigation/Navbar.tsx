@@ -1,0 +1,138 @@
+import React, { useState, useEffect } from 'react';
+import { NavLink, Link, useLocation } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { Bot, Menu, X } from 'lucide-react';
+
+interface NavbarProps {
+  isScrolled: boolean;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation(); // get current path
+  
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location.pathname]);
+
+  // Close on Escape or click outside
+  useEffect(() => {
+    const closeOnEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsOpen(false);
+    };
+    const closeOnClickOutside = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest('#mobile-menu') && !target.closest('#menu-button')) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener('keydown', closeOnEscape);
+    document.addEventListener('mousedown', closeOnClickOutside);
+    return () => {
+      document.removeEventListener('keydown', closeOnEscape);
+      document.removeEventListener('mousedown', closeOnClickOutside);
+    };
+  }, []);
+
+  // Prevent body scroll when open
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [isOpen]);
+
+  const navLinks = [
+    { name: 'Home', path: '/' },
+    { name: 'Services', path: '/services' },
+    { name: 'About', path: '/about' },
+    { name: 'News', path: '/news' },
+    { name: 'Blog', path: '/blog' },
+    { name: 'Contact', path: '/contact' },
+  ];
+
+  const navbarClass = isScrolled 
+    ? 'bg-white shadow-md py-3 transition-all duration-300' 
+    : 'bg-transparent backdrop-blur-sm py-4 transition-all duration-300';
+
+  return (
+    <header className={`sticky top-0 z-50 ${navbarClass}`}>
+      <nav className="container-custom">
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-2 text-xl font-bold text-primary-600 hover:text-primary-700">
+            <Bot size={28} />
+            <span>TeachMyRobot</span>
+          </Link>
+
+          {/* Desktop Nav */}
+          <div className="hidden md:flex items-center space-x-1">
+            {navLinks.map((link) => (
+              <NavLink
+                key={link.path}
+                to={link.path}
+                className={({ isActive }) => 
+                  `px-4 py-2 mx-1 rounded-md transition-colors ${
+                    isActive 
+                      ? 'text-primary-600 font-medium bg-primary-50' 
+                      : 'text-gray-700 hover:text-primary-600 hover:bg-gray-100'
+                  }`
+                }
+              >
+                {link.name}
+              </NavLink>
+            ))}
+            <motion.a href="#get-started" className="btn btn-primary ml-4" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              Get Started
+            </motion.a>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            id="menu-button"
+            className="md:hidden p-2 rounded-md text-gray-700 hover:text-primary-600 hover:bg-gray-100 focus:outline-none"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+
+        {/* Mobile Nav */}
+        {isOpen && (
+          <motion.div
+            id="mobile-menu"
+            className="fixed inset-x-0 top-16 bottom-0 bg-white bg-opacity-100 z-40 md:hidden"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div className="container-custom py-4 flex flex-col">
+              {navLinks.map((link) => (
+                <NavLink
+                  key={link.path}
+                  to={link.path}
+                  className={({ isActive }) => 
+                    `px-4 py-4 rounded-md text-lg transition-colors ${
+                      isActive 
+                        ? 'text-primary-600 font-medium bg-primary-50' 
+                        : 'text-gray-700 hover:text-primary-600 hover:bg-gray-100'
+                    }`
+                  }
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.name}
+                </NavLink>
+              ))}
+              <motion.a href="#get-started" className="btn btn-primary mt-4 text-center" whileTap={{ scale: 0.95 }} onClick={() => setIsOpen(false)}>
+                Get Started
+              </motion.a>
+            </div>
+          </motion.div>
+        )}
+      </nav>
+    </header>
+  );
+};
+
+export default Navbar;
