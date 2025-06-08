@@ -18,14 +18,14 @@ export const newsItems: NewsItem[] = [
   title: 'TeachMyRobot Launches First Morning Robotics Lab in Araria',
   slug: 'teachmyrobot-launches-morning-robotics-lab-araria',
   date: '2025-06-07',
-  excerpt: 'Chief Minister Nitish Kumar inaugurates  first morning robotics labin Araria at Rajkiyakrit Ramanugrah Higher Secondary School, introducing global STEM education.',
-  coverImage: 'https://drive.google.com/file/d/1FKiw_n0qVmv8PyeOx3qBZ5ks8Xbxx4b5/view?usp=sharing',
+  excerpt: 'Chief Minister Nitish Kumar inaugurates first morning robotics lab in Araria at Rajkiyakrit Ramanugrah Higher Secondary School, introducing global STEM education.',
+  coverImage: 'https://drive.google.com/uc?export=view&id=1FKiw_n0qVmv8PyeOx3qBZ5ks8Xbxx4b5',
   content: `
     <h2>First-Ever Morning Robotics Lab Opens in Araria</h2>
-    <p>TeachMyRobot proudly announces the launch of  first-ever morning robotics labat Araria, marking a major step toward advanced education in rural Bihar. The lab was inaugurated by Honorable Chief Minister <strong>Nitish Kumar</strong> at <strong>Rajkiyakrit Ramanugrah Higher Secondary School, Hansa</strong>.</p>
+    <p>TeachMyRobot proudly announces the launch of  first-ever morning robotics lab at Araria, marking a major step toward advanced education in rural Bihar. The lab was inaugurated by Honorable Chief Minister <strong>Nitish Kumar</strong> at <strong>Rajkiyakrit Ramanugrah Higher Secondary School, Hansa</strong>.</p>
     
     <h3>Advancing STEM Education</h3>
-    <img src="https://drive.google.com/file/d/11pEfcdrLqqcy6XMoaBCF9tjGPxngFvgT/view?usp=sharing" alt="description" style="width:100%; max-width:600px; margin: 20px 0;" />
+    <img src="https://drive.google.com/uc?export=view&id=11pEfcdrLqqcy6XMoaBCF9tjGPxngFvgT" alt="description" style="width:100%; max-width:600px; margin: 20px 0;" />
 
     <p>This initiative introduces global-level STEM learning with hands-on tools and curriculum. Students will now explore:</p>
     <ul>
