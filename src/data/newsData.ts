@@ -19,13 +19,13 @@ export const newsItems: NewsItem[] = [
   slug: 'teachmyrobot-launches-morning-robotics-lab-araria',
   date: '2025-06-07',
   excerpt: 'Chief Minister Nitish Kumar inaugurates first morning robotics lab in Araria at Rajkiyakrit Ramanugrah Higher Secondary School, introducing global STEM education.',
-  coverImage: 'public/images/news/n1cover.jpeg',
+  coverImage: 'images/news/n1cover.jpeg',
   content: `
     <h2>First-Ever Morning Robotics Lab Opens in Araria</h2>
     <p>TeachMyRobot proudly announces the launch of  first-ever morning robotics lab at Araria, marking a major step toward advanced education in rural Bihar. The lab was inaugurated by Honorable Chief Minister <strong>Nitish Kumar</strong> at <strong>Rajkiyakrit Ramanugrah Higher Secondary School, Hansa</strong>.</p>
     
     <h3>Advancing STEM Education</h3>
-    <img src="public/images/news/n1desc.jpeg' alt="description" style="width:100%; max-width:600px; margin: 20px 0;" />
+    <img src="images/news/n1desc.jpeg' alt="description" style="width:100%; max-width:600px; margin: 20px 0;" />
 
     <p>This initiative introduces global-level STEM learning with hands-on tools and curriculum. Students will now explore:</p>
     <ul>
