@@ -66,8 +66,10 @@ const Footer: React.FC = () => {
               <div className="flex items-start space-x-3">
                 <MapPin size={20} className="text-primary-400 mt-1" />
                 <span className="text-gray-400">
-                  123 Innovation Avenue<br />
-                  Tech City, TC 10101
+                  Venture studio Incubation,<br />
+                  Teachers Campus, AG, Shree Dada Jinanad Suri Marg,
+                  near HL College, University Area, Ahmedabad, Gujrat,
+                  380009
                 </span>
               </div>
               <div className="flex items-center space-x-3">
