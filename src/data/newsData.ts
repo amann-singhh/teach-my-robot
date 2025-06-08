@@ -14,49 +14,38 @@ export interface NewsItem {
 
 export const newsItems: NewsItem[] = [
   {
-    id: '1',
-    title: 'TeachMyRobot Launches New Summer Camp Programs',
-    slug: 'teachmyrobot-launches-new-summer-camp-programs',
-    date: '2025-04-18',
-    excerpt: 'Exciting new robotics and coding summer camps available for students grades K-12 starting June 2025.',
-    coverImage: 'https://images.pexels.com/photos/8566473/pexels-photo-8566473.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    content: `
-      <h2>New Summer Camp Options for All Ages</h2>
-      <p>TeachMyRobot is excited to announce our expanded summer camp offerings for 2025! This year, we've designed specialized programs for every age group from kindergarten through high school seniors.</p>
-      
-      <h3>Elementary School Camps (Grades K-5)</h3>
-      <ul>
-        <li><strong>Robo Explorers:</strong> A gentle introduction to robotics using LEGO WeDo 2.0 kits</li>
-        <li><strong>Code Adventurers:</strong> Block-based programming with Scratch to create games and animations</li>
-        <li><strong>Science Makers:</strong> Combining robotics with science experiments for hands-on STEM learning</li>
-      </ul>
-      
-      <h3>Middle School Camps (Grades 6-8)</h3>
-      <ul>
-        <li><strong>Robot Builders:</strong> Design and construct robots using LEGO Mindstorms EV3 kits</li>
-        <li><strong>Intro to Python:</strong> Text-based programming for games and simple applications</li>
-        <li><strong>Tech Inventors:</strong> Combining electronics, coding, and 3D design for creative projects</li>
-      </ul>
-      
-      <h3>High School Camps (Grades 9-12)</h3>
-      <ul>
-        <li><strong>Advanced Robotics:</strong> Using Arduino and professional components to build sophisticated robots</li>
-        <li><strong>Web & App Development:</strong> Creating responsive websites and mobile applications</li>
-        <li><strong>AI & Machine Learning Fundamentals:</strong> Introduction to artificial intelligence concepts and applications</li>
-      </ul>
-      
-      <h2>Camp Details</h2>
-      <p><strong>Dates:</strong> Weekly sessions from June 15 through August 14, 2025</p>
-      <p><strong>Times:</strong> 9:00 AM - 3:00 PM with extended care available</p>
-      <p><strong>Locations:</strong> Downtown Tech Center and Westside Learning Campus</p>
-      
-      <h2>Registration Information</h2>
-      <p>Early bird registration opens April 25th with a 15% discount for the first 50 registrants. Space is limited to ensure individual attention, so reserve your spot early!</p>
-      
-      <p>For more information or to register, visit our <a href="/services#summer-camps">Summer Camps page</a> or call (555) 123-4567.</p>
-    `,
-    featured: true,
-  },
+  id: '1',
+  title: 'TeachMyRobot Launches First Morning Robotics Lab in Araria',
+  slug: 'teachmyrobot-launches-morning-robotics-lab-araria',
+  date: '2025-06-07',
+  excerpt: 'Chief Minister Nitish Kumar inaugurates Araria’s first morning robotics lab at Rajkiyakrit Ramanugrah Higher Secondary School, introducing global STEM education.',
+  coverImage: 'https://drive.google.com/file/d/1FKiw_n0qVmv8PyeOx3qBZ5ks8Xbxx4b5/view?usp=sharing',
+  content: `
+    <h2>First-Ever Morning Robotics Lab Opens in Araria</h2>
+    <p>TeachMyRobot proudly announces the launch of Araria’s first-ever morning robotics lab, marking a major step toward advanced education in rural Bihar. The lab was inaugurated by Honorable Chief Minister <strong>Nitish Kumar</strong> at <strong>Rajkiyakrit Ramanugrah Higher Secondary School, Hansa</strong>.</p>
+    
+    <h3>Advancing STEM Education</h3>
+    <img src="https://drive.google.com/file/d/11pEfcdrLqqcy6XMoaBCF9tjGPxngFvgT/view?usp=sharing" alt="description" style="width:100%; max-width:600px; margin: 20px 0;" />
+
+    <p>This initiative introduces global-level STEM learning with hands-on tools and curriculum. Students will now explore:</p>
+    <ul>
+      <li><strong>3D Printing:</strong> Creating physical prototypes of their ideas</li>
+      <li><strong>Drone Technology:</strong> Understanding flight systems and navigation</li>
+      <li><strong>Microcontrollers:</strong> Learning to build and program smart devices</li>
+      <li><strong>Math Circle:</strong> Interactive problem-solving to build logical thinking</li>
+    </ul>
+    
+    <h3>Global Techno-Curriculum</h3>
+    <p>The program is inspired by advanced STEM modules used in <strong>Germany</strong> and the <strong>United States</strong>. It blends hands-on experimentation with real-world technology applications, aiming to foster creativity, critical thinking, and innovation among students.</p>
+    
+    <h2>Impact and Future Plans</h2>
+    <p>This lab will serve as a hub for rural innovation, inspiring students to pursue careers in science and technology. TeachMyRobot plans to expand this model to more schools in North Bihar in the coming months.</p>
+    
+    <p>For further updates and registration details for upcoming workshops, visit our <a href="/labs#araria">Araria Labs page</a> or call (555) 987-6543.</p>
+  `,
+  featured: true,
+},
+
   {
     id: '2',
     title: 'TeachMyRobot Partners with Local School District',
