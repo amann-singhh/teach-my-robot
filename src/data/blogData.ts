@@ -211,7 +211,61 @@ void loop() {
       <p>The key is finding languages that match a child's interests and provide achievable challenges that grow with their abilities. With the right approach, coding becomes not just a valuable skill, but an enjoyable creative outlet.</p>
     `,
     tags: ['coding', 'programming languages', 'education technology', 'Python', 'Scratch'],
-  }
+  },
+  {
+  id: '5',
+  title: 'From Curiosity to Creation: How AI-Powered Learning Kits Are Changing STEM Education in India',
+  slug: 'ai-powered-learning-kits-in-india-stem-revolution',
+  author: 'Priya Malhotra',
+  date: '2025-06-13',
+  category: 'AI in Education',
+  excerpt: 'Explore how affordable AI-powered learning kits are revolutionizing STEM education in India, especially in government schools. Learn how students are using tools like Arduino, Edge AI, and vision systems to build real-world solutions at a young age.',
+  coverImage: 'https://images.pexels.com/photos/7868889/pexels-photo-7868889.jpeg?',
+  content: `
+    <h2>What Are AI-Powered Learning Kits?</h2>
+    <p>AI-powered learning kits are modular education kits that integrate sensors, microcontrollers (like Arduino or Raspberry Pi), and pre-trained AI models. These kits allow students to build hands-on projects such as face detection, voice control systems, or smart irrigation devices—while learning the logic behind them.</p>
+
+    <h3>Core Components of an AI Kit</h3>
+    <ul>
+      <li>Arduino Uno or ESP32 Microcontroller</li>
+      <li>Camera module (for computer vision)</li>
+      <li>Edge AI board (like NVIDIA Jetson Nano or Raspberry Pi)</li>
+      <li>Pre-trained AI models (face recognition, gesture detection)</li>
+      <li>Drag-and-drop coding interface or Python IDE</li>
+    </ul>
+
+    <h2>Why They're Game-Changing in India</h2>
+    <p>Traditional labs are expensive and complex to maintain. AI kits provide a low-cost, plug-and-play solution for schools. Especially in rural PM SHRI schools, these kits are a bridge to cutting-edge technology—without needing internet access or costly infrastructure.</p>
+
+    <h3>Case Study: A Village School in Maharashtra</h3>
+    <p>Students used a local AI kit to design a facial recognition system for attendance. It used an ESP32-CAM module and open-source software to detect student faces—saving time and creating accountability. Their project later won a regional STEM innovation award.</p>
+
+    <h2>Learning Outcomes</h2>
+    <ul>
+      <li>Understanding of real-world AI applications</li>
+      <li>Ability to build prototypes with sensors and code</li>
+      <li>Confidence to present solutions to real-world problems</li>
+      <li>Encouragement to pursue tech careers early</li>
+    </ul>
+
+    <h2>How We’re Implementing AI Kits in PM SHRI Schools</h2>
+    <p>We’ve launched our AI learning program in 10+ government schools with support from CSR and ed-tech partnerships. Each kit includes:
+    <ul>
+      <li>Step-by-step project booklets in Hindi and English</li>
+      <li>Bilingual video tutorials and offline activities</li>
+      <li>AI ethics and safety training modules</li>
+    </ul>
+    </p>
+
+    <h2>What's Next: Humanoid + AI Integration</h2>
+    <p>We’re working on integrating these kits with basic humanoid robots—allowing students to train models to interact in Hindi, mimic facial expressions, or respond to gestures. The goal is to prepare students for future-ready jobs in robotics, AI, and automation.</p>
+
+    <h2>Conclusion</h2>
+    <p>AI learning kits are not just tools—they are catalysts. In places where even a computer lab seemed like a luxury a few years ago, kids are now designing intelligent systems. This is India’s STEM revolution in motion—and it’s powered by young minds, microcontrollers, and limitless curiosity.</p>
+  `,
+  tags: ['AI education', 'robotics kits', 'Arduino', 'edge computing', 'PM SHRI schools', 'rural STEM']
+ }
+
 ];
 
 export const getRecentBlogPosts = (count: number = 3): BlogPost[] => {

@@ -47,7 +47,7 @@
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold;
+    @apply font-bold tracking-tight;
   }
   
   h1 {
@@ -67,7 +67,7 @@
   }
   
   p {
-    @apply leading-relaxed;
+    @apply leading-relaxed text-gray-600;
   }
 }
 
@@ -77,7 +77,7 @@
   }
   
   .btn {
-    @apply inline-flex items-center justify-center px-6 py-3 font-medium rounded-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+    @apply inline-flex items-center justify-center px-6 py-3 font-medium rounded-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 shadow-sm hover:shadow-md;
   }
   
   .btn-primary {
@@ -93,7 +93,7 @@
   }
   
   .card {
-    @apply bg-white rounded-lg shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-lg;
+    @apply bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
   }
   
   .section {
@@ -101,10 +101,59 @@
   }
   
   .section-title {
-    @apply text-3xl md:text-4xl font-bold mb-8 text-center;
+    @apply text-3xl md:text-4xl font-bold mb-4 text-center text-gray-900;
   }
   
   .section-subtitle {
     @apply text-xl text-gray-600 mb-12 text-center max-w-3xl mx-auto;
+  }
+
+  /* New utility classes for homepage */
+  .hero-gradient {
+    @apply bg-gradient-to-r from-primary-700 to-primary-900;
+  }
+
+  .feature-card {
+    @apply p-6 rounded-xl bg-white shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100;
+  }
+
+  .icon-wrapper {
+    @apply w-12 h-12 rounded-lg flex items-center justify-center mb-4;
+  }
+
+  .icon-wrapper-primary {
+    @apply bg-primary-100 text-primary-600;
+  }
+
+  .icon-wrapper-secondary {
+    @apply bg-secondary-100 text-secondary-600;
+  }
+
+  .icon-wrapper-accent {
+    @apply bg-accent-100 text-accent-600;
+  }
+
+  .nav-link {
+    @apply px-4 py-2 rounded-md transition-colors duration-200 font-medium;
+  }
+
+  .nav-link-active {
+    @apply text-primary-600 bg-primary-50;
+  }
+
+  .nav-link-inactive {
+    @apply text-gray-700 hover:text-primary-600 hover:bg-gray-100;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-secondary-600;
+  }
+
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+  }
+
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-sm border border-white/20;
   }
 }

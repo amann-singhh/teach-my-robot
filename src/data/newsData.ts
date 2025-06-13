@@ -19,7 +19,7 @@ export const newsItems: NewsItem[] = [
   slug: 'teachmyrobot-launches-morning-robotics-lab-araria',
   date: '2025-06-07',
   excerpt: 'Chief Minister Nitish Kumar inaugurates first morning robotics lab in Araria at Rajkiyakrit Ramanugrah Higher Secondary School, introducing global STEM education.',
-  coverImage: 'images/news/n1cover.jpeg',
+  coverImage: '/images/news/n1cover.jpeg',
   content: `
     <h2>First-Ever Morning Robotics Lab Opens in Araria</h2>
     <p>TeachMyRobot proudly announces the launch of  first-ever morning robotics lab at Araria, marking a major step toward advanced education in rural Bihar. The lab was inaugurated by Honorable Chief Minister <strong>Nitish Kumar</strong> at <strong>Rajkiyakrit Ramanugrah Higher Secondary School, Hansa</strong>.</p>
@@ -186,7 +186,42 @@ export const newsItems: NewsItem[] = [
       <p>Current TeachMyRobot students will receive early access starting May 1st. Join our <a href="/waitlist">waitlist</a> to be among the first to explore the platform when it launches publicly on May 15th, 2025.</p>
     `,
     featured: true,
-  }
+  },
+  {
+     id: '5',
+  title: 'AI & Robotics Labs Transforming Government Schools under PM SHRI Mission',
+  slug: 'ai-robotics-labs-transforming-govt-schools-pmshri',
+  date: '2025-06-13',
+  excerpt: 'Empowering students with hands-on AI and Robotics learning, this initiative brings cutting-edge technology to PM SHRI schools, aligned with NEP 2020 vision.',
+  coverImage: '/images/news/n5.png',
+  content: `
+    <h2>AI & Robotics Labs Transforming Government Education</h2>
+    <p>In a transformative step aligned with the PM SHRI initiative and National Education Policy 2020, our organization is setting up AI and Robotics labs across select government schools. The goal is to equip students with critical 21st-century skills by providing early exposure to cutting-edge technologies.</p>
+    
+    <h3>Why It Matters</h3>
+    <p>This program introduces school children—especially from rural and under-resourced regions—to real-world applications of AI, coding, and robotics. By promoting problem-solving, creativity, and innovation, it lays the foundation for future careers in science and technology.</p>
+
+    <h3>What We're Doing</h3>
+    <ul>
+      <li>Establishing fully-equipped robotics and AI labs in PM SHRI model schools</li>
+      <li>Creating multilingual STEM media content for visual and interactive learning</li>
+      <li>Training teachers on hands-on modules and future-ready teaching practices</li>
+      <li>Introducing students to real-life projects like line follower robots and sensor-based systems</li>
+    </ul>
+
+    <h3>National Vision Alignment</h3>
+    <p>The initiative supports the key pillars of NEP 2020, Atal Innovation Mission, and the broader Digital India campaign. It brings STEM opportunities to students who otherwise lack access to such modern educational infrastructure.</p>
+
+    <h3>Student Response</h3>
+    <p>Early student engagement has been overwhelmingly positive, with learners showing increased curiosity, confidence, and enthusiasm toward science and technology. Schools have reported higher classroom participation and hands-on learning outcomes.</p>
+
+    <h2>Looking Ahead</h2>
+    <p>The program is currently expanding across more districts, with a strong focus on sustainability and long-term community impact. More workshops, labs, and content rollouts are planned in the upcoming academic sessions.</p>
+
+    <p>For updates, school participation inquiries, or volunteering opportunities, visit our <a href="">PM SHRI Labs page</a>.</p>
+  `,
+  featured: false,
+  },
 ];
 
 export const getRecentNewsItems = (count: number = 3): NewsItem[] => {

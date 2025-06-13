@@ -107,8 +107,8 @@ const NewsPostPage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Main Content */}
             <div className="lg:col-span-2">
-              <article>
-                <div className="prose max-w-none">
+              <article className="prose prose-lg max-w-none">
+                <div className="prose-headings:font-semibold prose-headings:text-gray-800 prose-p:text-gray-700 prose-p:text-base prose-li:marker:text-primary-600 prose-a:text-primary-600 hover:prose-a:text-primary-700 prose-img:rounded-lg prose-img:shadow-md prose-ul:pl-5 prose-ol:pl-5 prose-blockquote:border-l-4 prose-blockquote:border-primary-500 prose-blockquote:pl-4 prose-blockquote:text-gray-600">
                   <div dangerouslySetInnerHTML={{ __html: newsItem.content }}></div>
                 </div>
               </article>

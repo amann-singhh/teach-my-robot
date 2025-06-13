@@ -99,36 +99,64 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
 
         {/* Mobile Nav */}
         {isOpen && (
-          <motion.div
-            id="mobile-menu"
-            className="fixed inset-x-0 top-16 bottom-0 bg-white bg-opacity-100 z-40 md:hidden"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.2 }}
-          >
-            <div className="container-custom py-4 flex flex-col">
-              {navLinks.map((link) => (
-                <NavLink
-                  key={link.path}
-                  to={link.path}
-                  className={({ isActive }) => 
-                    `px-4 py-4 rounded-md text-lg transition-colors ${
-                      isActive 
-                        ? 'text-primary-600 font-medium bg-primary-50' 
-                        : 'text-gray-700 hover:text-primary-600 hover:bg-gray-100'
-                    }`
-                  }
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.name}
-                </NavLink>
-              ))}
-              <motion.a href="#get-started" className="btn btn-primary mt-4 text-center" whileTap={{ scale: 0.95 }} onClick={() => setIsOpen(false)}>
-                Get Started
-              </motion.a>
-            </div>
-          </motion.div>
+          <div className="md:hidden">
+            <motion.div 
+              className="fixed inset-0 bg-black/40 backdrop-blur-sm z-30" 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsOpen(false)}
+            />
+            <motion.div
+              id="mobile-menu"
+              className="fixed right-0 top-16 w-full max-w-sm bg-white h-[calc(100vh-4rem)] z-40 shadow-xl"
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 25, stiffness: 200 }}
+            >
+              <div className="flex flex-col h-full">
+                <div className="p-4 border-b border-gray-100">
+                  <div className="flex items-center gap-2 text-primary-600">
+                    <Bot size={24} />
+                    <span className="font-semibold">TeachMyRobot</span>
+                  </div>
+                </div>
+                
+                <div className="flex-1 overflow-y-auto">
+                  <div className="p-4 flex flex-col gap-1">
+                    {navLinks.map((link) => (
+                      <NavLink
+                        key={link.path}
+                        to={link.path}
+                        className={({ isActive }) => 
+                          `px-4 py-3 rounded-lg text-base font-medium transition-colors duration-200 ${
+                            isActive 
+                              ? 'text-primary-600 bg-primary-50' 
+                              : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
+                          }`
+                        }
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {link.name}
+                      </NavLink>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="p-4 border-t border-gray-100">
+                  <motion.a 
+                    href="#get-started" 
+                    className="block w-full px-4 py-3 text-center rounded-lg bg-primary-600 text-white font-medium hover:bg-primary-700 transition-colors duration-200" 
+                    whileTap={{ scale: 0.98 }}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Get Started
+                  </motion.a>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         )}
       </nav>
     </header>
