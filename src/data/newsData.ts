@@ -25,7 +25,7 @@ export const newsItems: NewsItem[] = [
     <p>TeachMyRobot proudly announces the launch of  first-ever morning robotics lab at Araria, marking a major step toward advanced education in rural Bihar. The lab was inaugurated by Honorable Chief Minister <strong>Nitish Kumar</strong> at <strong>Rajkiyakrit Ramanugrah Higher Secondary School, Hansa</strong>.</p>
     
     <h3>Advancing STEM Education</h3>
-    <img src="images/news/n1desc.jpeg' alt="description" style="width:100%; max-width:600px; margin: 20px 0;" />
+    <img src="/images/news/n1desc.jpeg" alt="description" style="width:100%; max-width:600px; margin: 20px 0;" />
 
     <p>This initiative introduces global-level STEM learning with hands-on tools and curriculum. Students will now explore:</p>
     <ul>
@@ -41,7 +41,7 @@ export const newsItems: NewsItem[] = [
     <h2>Impact and Future Plans</h2>
     <p>This lab will serve as a hub for rural innovation, inspiring students to pursue careers in science and technology. TeachMyRobot plans to expand this model to more schools in North Bihar in the coming months.</p>
     
-    <p>For further updates and registration details for upcoming workshops, visit our <a href="/labs#araria">Araria Labs page</a> or call (555) 987-6543.</p>
+    <p>For further updates and registration details for upcoming workshops, visit our <a href="/labs#araria">Araria Labs page</a> or call +91 9772101792.</p>
   `,
   featured: true,
 },
