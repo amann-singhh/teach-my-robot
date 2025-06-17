@@ -220,7 +220,7 @@ const HomePage: React.FC = () => {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-            {getFeaturedNewsItems(3).map((item) => (
+            {getFeaturedNewsItems(6).map((item) => (
               <Link
                 to={`/news/${item.id}`}
                 key={item.id}

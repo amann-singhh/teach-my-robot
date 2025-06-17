@@ -52,7 +52,7 @@ export const newsItems: NewsItem[] = [
     slug: 'teachmyrobot-partners-with-local-school-district',
     date: '2025-04-10',
     excerpt: 'New partnership will bring robotics education to all 25 elementary schools in the district starting Fall 2025.',
-    coverImage: 'https://images.pexels.com/photos/8566271/pexels-photo-8566271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    coverImage: '/images/news/WV2021.heic',
     content: `
       <h2>Expanding Access to STEM Education</h2>
       <p>TeachMyRobot is proud to announce a comprehensive partnership with Westview School District to bring robotics and coding education to all 25 elementary schools starting in the 2025-2026 academic year.</p>
@@ -222,6 +222,200 @@ export const newsItems: NewsItem[] = [
   `,
   featured: false,
   },
+  {
+    id: '6',
+    title: 'Empowering Future Innovators: TeachMyRobot Partners with GD Goenka International School, Ahmedabad',
+    slug: 'teachmyrobot-gdgoenka-stem-robotics',
+    date: '2025-01-23',
+    excerpt: 'A landmark collaboration bringing hands-on STEM, AI, and robotics education to students at GD Goenka International School, Ahmedabad—shaping future innovators.',
+    coverImage: '/images/news/news_id06.jpg',
+    content: `
+      <h2>Empowering Future Innovators</h2>
+      <p>We are thrilled to announce a landmark collaboration between TeachMyRobot and GD Goenka International School, Ahmedabad, aimed at transforming the educational landscape through the integration of STEM (Science, Technology, Engineering, Mathematics) and Robotics-based learning.</p>
+      
+      <h3>Bridging Education and Innovation</h3>
+      <p>This partnership marks a major step toward providing students with hands-on access to emerging technologies such as drone systems, robotics, IoT, and AI fundamentals. Our mission is to bridge the gap between classroom learning and real-world applications — fostering innovation, problem-solving, and technical skills from an early age.</p>
+
+      
+      <h3>Program Highlights</h3>
+      <ul>
+        <li>Building and programming autonomous robots</li>
+        <li>Simulating and flying real-time drones</li>
+        <li>Understanding aerodynamics, sensors, and automation</li>
+        <li>Participating in group challenges, tech expos, and hackathons</li>
+        <li>Exploring 3D printing and electronic prototyping</li>
+      </ul>
+  
+      <h3>Curriculum and Learning</h3>
+      <p>Our NEP 2020-aligned curriculum emphasizes experiential learning and 21st-century skill development. The program is led by industry professionals and certified educators, bringing both expertise and mentorship to the classroom.</p>
+  
+      <h3>Vision and Goals</h3>
+      <ul>
+        <li>Nurture creativity and innovation</li>
+        <li>Enhance logical reasoning and analytical thinking</li>
+        <li>Spark interest in engineering, aerospace, and coding</li>
+        <li>Build student portfolios through project-based learning</li>
+        <li>Offer exposure to national-level STEM competitions</li>
+      </ul>
+  
+      <h3>Advanced Learning Environment</h3>
+      <p>The school’s on-site lab is equipped with advanced learning kits, drone stations, and programming consoles, creating a dynamic space for students to experiment and explore.</p>
+  
+      <p>“This program will unlock new possibilities for our students and help them evolve into confident, tech-savvy problem solvers,” said a representative from the school.</p>
+  
+      <h2>A Step Toward a Tech-Driven Future</h2>
+      <p>With this partnership, GD Goenka International School joins TeachMyRobot’s growing network of progressive institutions dedicated to future-ready education.</p>
+      
+      <p>At TeachMyRobot, we believe that every child deserves the opportunity to create, innovate, and lead in tomorrow’s tech-driven world — and this collaboration is a major leap in that direction.</p>
+    `,
+    featured: true,
+  },
+
+  {
+    id: '7',
+    title: 'Shaping Ideas into Reality: TeachMyRobot Launches 3D Printing Labs in Partner Schools',
+    slug: 'teachmyrobot-3d-printing-labs-launch',
+    date: '2025-03-18',
+    excerpt: 'TeachMyRobot introduces 3D Printing Labs in partner schools across India — empowering students to design, prototype, and innovate with hands-on learning aligned with NEP 2020.',
+    coverImage: '/images/news/news_id07.jpg',
+    content: `
+      <h2>Shaping Ideas into Reality</h2>
+      <p>TeachMyRobot is proud to introduce a groundbreaking initiative aimed at redefining innovation in education — the launch of 3D Printing Labs in schools across India.</p>
+  
+      <p>These state-of-the-art labs empower students to transform ideas into tangible models, using cutting-edge 3D printing technology. By integrating CAD (Computer-Aided Design), prototyping, and product engineering into the classroom, the program offers a powerful, hands-on learning experience that resonates with the goals of NEP 2020.</p>
+  
+      <img src="/images/news/news_id071.jpg" alt="description" style="width:100%; max-width:600px; margin: 20px 0;" />
+
+      <h3>Real-Time Design and Learning</h3>
+      <ul>
+        <li>Designing functional, real-world objects from scratch</li>
+        <li>Understanding structural and mechanical principles</li>
+        <li>Learning iterative design thinking and model refinement</li>
+        <li>Collaborating on industry-style workflows and group projects</li>
+      </ul>
+  
+      <p>This initiative fosters not only creativity and critical thinking but also prepares students for the future of design, engineering, and advanced manufacturing. Students learn by doing — developing problem-solving skills, spatial awareness, and an engineering mindset from an early age.</p>
+  
+      <h3>Nationwide Rollout</h3>
+      <p>The 3D Printing Labs are being deployed across our expanding network of partner institutions. These forward-thinking institutions have embraced our shared mission of bringing next-generation technology into the hands of students — igniting curiosity and confidence in the classroom.</p>
+  
+      <p>“Our students are now not just learning concepts, they are building them. These labs have opened a new dimension of learning,” shared a faculty member from one of our partner schools.</p>
+  
+      <h2>Creating the Makers of Tomorrow</h2>
+      <p>At TeachMyRobot, we believe that technology should empower creation — not just consumption. Through this initiative, we aim to shape a generation of innovators, designers, and makers who are ready to lead the future — one printed prototype at a time.</p>
+    `,
+    featured: true,
+  },
+  {
+    id: '8',
+    title: 'Competitions & Exhibitions: Showcasing Student Talent Across India',
+    slug: 'teachmyrobot-competitions-exhibitions',
+    date: '2025-04-27',
+    excerpt: 'From robotics championships to national STEM expos, TeachMyRobot empowers students to demonstrate their skills and creativity through real-world competitions and exhibitions.',
+    coverImage: '/images/news/news_id061.jpg',
+    content: `
+      <h2>Empowering Through Competition</h2>
+      <p>At TeachMyRobot, we believe in nurturing talent by providing students with opportunities beyond the classroom. As part of this mission, we have successfully organized and participated in multiple robotics and STEM competitions and exhibitions across India.</p>
+  
+      <p>These events serve as dynamic platforms for students to apply their knowledge, demonstrate creativity, and compete with peers from across the country. From building autonomous robots to presenting AI-driven solutions, our students have consistently impressed judges and audiences alike with their innovation and technical proficiency.</p>
+
+      <img src="/images/news/news_id08.jpg" 
+      alt="description" 
+      style="width:100%; max-width:600px; max-height:400px; object-fit:cover; margin: 20px 0;" />
+
+      <h3>Key Highlights</h3>
+      <ul>
+        <li>School-level robotics championships</li>
+        <li>Regional STEM innovation challenges</li>
+        <li>Live coding events and hardware hackathons</li>
+        <li>Showcasing AI, IoT, and drone projects at national expos</li>
+      </ul>
+  
+      <p>By engaging in these events, students gain real-world exposure, develop problem-solving skills under pressure, and learn to collaborate in high-stakes environments — all essential for their future careers in tech and engineering.</p>
+  
+      <h3>Exhibitions That Inspire</h3>
+      <p>Our participation in prestigious educational exhibitions also allows us to demonstrate our work in curriculum innovation, STEM outreach, and edtech integration to educators, institutions, and policymakers.</p>
+  
+      <h2>Building a Future-Ready Generation</h2>
+      <p>These experiences are shaping a confident, future-ready generation — and we are proud to be a part of their journey.</p>
+    `,
+    featured: true,
+  },
+
+  {
+    id: '9',
+    title: 'Empowering Students Beyond Academics: Career Counselling, Medical Camps & Vocational Training Initiatives',
+    slug: 'teachmyrobot-career-counselling-medical-vocational',
+    date: '2025-05-15',
+    excerpt: 'TeachMyRobot’s holistic programs—career counselling, medical camps, and vocational training—empower students with the guidance, health support, and skills they need to succeed beyond academics.',
+    coverImage: '/images/news/news_id09.jpg',
+    content: `
+      <h2>Empowering Students Beyond Academics</h2>
+      <p>At TeachMyRobot, we believe that true education goes beyond textbooks — it must empower students both intellectually and personally. As part of our holistic development approach, we’ve launched a series of impactful programs across our partner schools, including career counselling sessions, medical health camps, and vocational training modules.</p>
+  
+      <h3>Career Counselling for Informed Futures</h3>
+      <p>Our career counselling sessions are led by certified experts who help students explore diverse academic and career paths based on their interests, skills, and future goals. From engineering and medicine to design, entrepreneurship, and beyond — students gain clarity and direction early in their journey.</p>
+  
+
+       <img src="/images/news/medicalCamp.jpeg" alt="description" style="width:100%; max-width:600px;max-height:300px; margin: 20px 0;" />
+
+      <h3>Health & Wellness Through Medical Camps</h3>
+      <p>We organize medical and wellness camps to ensure the physical well-being of students. These include routine health checkups, nutrition awareness drives, and sessions on mental well-being — recognizing that a healthy student is a successful learner.</p>
+  
+      <h3>Vocational Training for Real-World Readiness</h3>
+      <p>Our vocational training programs equip students with practical skills in areas like basic electronics, robotics assembly, 3D modeling, and digital literacy. These workshops bridge the gap between academic knowledge and industry demands, preparing students to thrive in real-world environments.</p>
+  
+      <h2>A Holistic Vision for the Future</h2>
+      <p>By integrating academic guidance, health awareness, and hands-on training, we’re shaping not just smarter learners — but more confident, capable, and future-ready individuals.</p>
+    `,
+    featured: false,
+  },
+
+  {
+    id: '10',
+    title: 'Expanding Our Impact: New Partnerships with JNVs and KVs Across India',
+    slug: 'teachmyrobot-new-jnv-kv-partnerships',
+    date: '2025-05-13',
+    excerpt: 'TeachMyRobot partners with JNVs and KVs across India to bring cutting-edge STEM and tech education to government school ecosystems — making innovation accessible to all.',
+    coverImage: '/images/news/WhatsApp Image 2025-06-03 at 7.50.09 PM.jpeg',
+    content: `
+      <h2>Expanding Our Impact</h2>
+      <p>We are delighted to announce a series of new collaborations with Jawahar Navodaya Vidyalayas (JNVs) and Kendriya Vidyalayas (KVs), as part of our ongoing mission to democratize access to future-focused STEM education across India.</p>
+      <video controls autoplay loop muted playsinline style="width:100%; max-width:600px; margin: 20px 0;">
+      <source src="/public/news_id101.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+      </video>
+
+      <h3>Newly Joined Schools</h3>
+      <ul>
+        <li>KV Tura, Meghalaya</li>
+        <li>JNV Somnath and JNV Anand, Gujarat</li>
+        <li>JNV Parbhani, Maharashtra</li>
+        <li>Multiple schools across rural Bihar, expanding our outreach to underserved communities</li>
+      </ul>
+  
+      <p>These partnerships mark a significant milestone in our journey, as we bring robotics, AI, drone tech, and 3D printing labs into government school ecosystems — helping students explore cutting-edge technologies firsthand.</p>
+  
+      <h3>What We’re Offering</h3>
+      <ul>
+        <li>Fostering innovation and problem-solving</li>
+        <li>Improving digital and technical literacy</li>
+        <li>Encouraging project-based learning and teamwork</li>
+        <li>Preparing students for careers in science and technology</li>
+      </ul>
+  
+      <p>Through custom-designed programs, expert mentoring, and hands-on tech experiences, students at these schools are being equipped with skills that go beyond the standard curriculum.</p>
+  
+      <h2>A Vision for Equitable Education</h2>
+      <p>With these new collaborations, TeachMyRobot continues to scale its vision of making equitable, high-quality tech education accessible to all — regardless of location or background.</p>
+  
+      <p>We're excited to work closely with these institutions and look forward to creating lasting impact in the lives of their students.</p>
+    `,
+    featured: true,
+  }
+  
+  
+  
 ];
 
 export const getRecentNewsItems = (count: number = 3): NewsItem[] => {
