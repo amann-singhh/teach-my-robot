@@ -382,7 +382,7 @@ export const newsItems: NewsItem[] = [
       <h2>Expanding Our Impact</h2>
       <p>We are delighted to announce a series of new collaborations with Jawahar Navodaya Vidyalayas (JNVs) and Kendriya Vidyalayas (KVs), as part of our ongoing mission to democratize access to future-focused STEM education across India.</p>
       <video controls autoplay loop muted playsinline style="width:100%; max-width:600px; margin: 20px 0;">
-      <source src="/public/news_id101.mp4" type="video/mp4">
+      <source src="/news_id101.mp4" type="video/mp4">
       Your browser does not support the video tag.
       </video>
 
