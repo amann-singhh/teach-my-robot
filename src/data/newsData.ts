@@ -412,7 +412,31 @@ export const newsItems: NewsItem[] = [
       <p>We're excited to work closely with these institutions and look forward to creating lasting impact in the lives of their students.</p>
     `,
     featured: true,
-  }
+  },
+  {
+  "id": "11",
+  "title": "AI & Robotics Labs for Schools: Strengthening STEM through Strategic Pilots",
+  "slug": "teachmyrobot-ai-robotics-school-pilots",
+  "date": "2025-06-18",
+  "excerpt": "TeachMyRobot is working closely with government stakeholders to introduce AI and robotics modules in public schools—through phased pilots, educator engagement, and classroom integrations.",
+  "coverImage": "/images/news/news_id11.jpg",
+  "content": `
+    <h2>Strategic Pilots in Public Education</h2>
+    <p>TeachMyRobot is engaging with select government schools to explore scalable ways of introducing AI and robotics into the classroom. These early-stage pilots aim to align modern STEM tools with local learning environments through practical integration.</p>
+
+    <h3>Focused Teacher & Student Engagement</h3>
+    <p>The pilot phase emphasizes working directly with educators and students through curated kits, activity-based sessions, and capacity-building workshops designed to spark curiosity and foundational understanding of robotics and AI concepts.</p>
+
+    <img src="/images/news/news_id111.jpg" alt="Students participating in robotics activity" style="width:100%; max-width:600px; max-height:300px; margin: 20px 0;" />
+
+    <h3>Building Towards Scalable Models</h3>
+    <p>Insights gathered from these pilot interactions will help shape adaptable models for broader implementation, ensuring future-ready skill development in alignment with educational priorities.</p>
+
+    <h2>A Ground-Up Approach to Innovation</h2>
+    <p>Rather than a one-size-fits-all solution, TeachMyRobot is committed to a grounded, iterative approach—co-creating with schools and departments to ensure meaningful, long-term impact in STEM education.</p>
+  `,
+  "featured": false
+}
   
   
   
