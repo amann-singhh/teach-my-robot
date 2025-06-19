@@ -48,6 +48,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
     { name: 'News', path: '/news' },
     { name: 'Blog', path: '/blog' },
     { name: 'Contact', path: '/contact' },
+    { name: 'Robot Maze', path: '/robot-maze' },
   ];
 
   const navbarClass = isScrolled 

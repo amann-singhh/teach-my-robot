@@ -15,6 +15,7 @@ import BlogsPage from './pages/BlogsPage';
 import BlogPostPage from './pages/BlogPostPage';
 import NewsPostPage from './pages/NewsPostPage';
 import NotFoundPage from './pages/NotFoundPage';
+import RobotMazeGame from './pages/RobotMazeGame';
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -31,6 +32,7 @@ const AnimatedRoutes = () => {
           <Route path="news/:id" element={<NewsPostPage />} />
           <Route path="blog" element={<BlogsPage />} />
           <Route path="blog/:id" element={<BlogPostPage />} />
+          <Route path="robot-maze" element={<RobotMazeGame />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>

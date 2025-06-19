@@ -12,6 +12,7 @@ import {
   UserCog,
 } from "lucide-react";
 import { getFeaturedNewsItems } from "../data/newsData";
+import ChatBotWidget from "../components/utility/ChatBotWidget";
 
 const HomePage: React.FC = () => {
   return (
@@ -251,7 +252,8 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* Rest of the page... */}
+      {/* Place the chatbot widget at the end so it overlays everything */}
+      <ChatBotWidget />
     </PageTransition>
   );
 };
