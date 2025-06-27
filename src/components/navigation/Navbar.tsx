@@ -44,6 +44,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Services', path: '/services' },
+    { name: 'Smart Anganwadi', path: '/smart-anganwadi' },
     { name: 'Courses', path: '/courses' },
     { name: 'About', path: '/about' },
     { name: 'News', path: '/news' },

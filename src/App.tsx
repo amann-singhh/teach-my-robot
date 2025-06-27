@@ -18,6 +18,7 @@ import NotFoundPage from './pages/NotFoundPage';
 import RobotMazeGame from './pages/RobotMazeGame';
 import CoursePage from './pages/CoursePage';
 import CourseDetailPage from './pages/CourseDetailPage';
+import SmartAnganwadiPage from './pages/SmartAnganwadiPage';
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -37,6 +38,7 @@ const AnimatedRoutes = () => {
           <Route path="blog" element={<BlogsPage />} />
           <Route path="blog/:id" element={<BlogPostPage />} />
           <Route path="robot-maze" element={<RobotMazeGame />} />
+          <Route path="smart-anganwadi" element={<SmartAnganwadiPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
