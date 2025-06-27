@@ -1,0 +1,27 @@
+{
+  "main": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-teachmyrobot-main-88348-authRole",
+      "UnauthRoleArn": "arn:aws:iam::289242714953:role/amplify-teachmyrobot-main-88348-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::289242714953:role/amplify-teachmyrobot-main-88348-authRole",
+      "Region": "eu-north-1",
+      "DeploymentBucketName": "amplify-teachmyrobot-main-88348-deployment",
+      "UnauthRoleName": "amplify-teachmyrobot-main-88348-unauthRole",
+      "StackName": "amplify-teachmyrobot-main-88348",
+      "StackId": "arn:aws:cloudformation:eu-north-1:289242714953:stack/amplify-teachmyrobot-main-88348/03009be0-5386-11f0-87cf-0e9eda0b98b1",
+      "AmplifyAppId": "d1p7ln785sc0vt"
+    },
+    "categories": {
+      "function": {
+        "geminiProxy": {
+          "geminiApiKey": "AIzaSyDU0J4JQewLJNUwPD3adX3EDPurWiMpIeg",
+          "deploymentBucketName": "amplify-teachmyrobot-main-88348-deployment",
+          "s3Key": "amplify-builds/geminiProxy-3435646f5844356c4e71-build.zip"
+        }
+      },
+      "api": {
+        "geminiapi": {}
+      }
+    }
+  }
+}

@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { faqs, FAQ } from './faqData';
 import axios from 'axios';
 
-const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
+const API_GATEWAY_URL = 'https://xdrowyxya4.execute-api.eu-north-1.amazonaws.com/main/gemini';
 const SYSTEM_PROMPT = `You are a friendly and knowledgeable STEM education assistant for TeachMyRobot.com.
 You help students, parents, and teachers understand robotics, AI, and STEM learning kits.
 Keep responses simple, engaging, and helpful.
@@ -20,21 +20,11 @@ const ChatBotWidget: React.FC = () => {
   const sendMessageToGemini = async (userMessage: string) => {
     setLoading(true);
     try {
-      const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
       const response = await axios.post(
-        `${GEMINI_API_URL}?key=${apiKey}`,
-        {
-          contents: [
-            {
-              role: 'user',
-              parts: [
-                { text: `${SYSTEM_PROMPT}\n\n${userMessage}` }
-              ]
-            }
-          ]
-        }
+        API_GATEWAY_URL,
+        { userMessage: `${SYSTEM_PROMPT}\n\n${userMessage}` }
       );
-      const botReply = response.data.candidates?.[0]?.content?.parts?.[0]?.text || 'Sorry, I could not generate a response.';
+      const botReply = response.data.reply || 'Sorry, I could not generate a response.';
       setMessages((msgs) => [...msgs, { from: 'user', text: userMessage }, { from: 'bot', text: botReply }]);
     } catch (err) {
       setMessages((msgs) => [...msgs, { from: 'user', text: userMessage }, { from: 'bot', text: 'Sorry, there was an error connecting to the AI.' }]);

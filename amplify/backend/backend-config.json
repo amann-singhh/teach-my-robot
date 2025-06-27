@@ -1,0 +1,52 @@
+{
+  "api": {
+    "geminiapi": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "geminiProxy"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "geminiProxy": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_geminiProxy_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "geminiProxy"
+        }
+      ]
+    },
+    "AMPLIFY_function_geminiProxy_geminiApiKey": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "geminiProxy"
+        }
+      ]
+    },
+    "AMPLIFY_function_geminiProxy_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "geminiProxy"
+        }
+      ]
+    }
+  }
+}
