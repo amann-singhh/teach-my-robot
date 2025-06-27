@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Bot, Menu, X } from 'lucide-react';
+import { Bot, Menu, X, ChevronDown } from 'lucide-react';
 
 interface NavbarProps {
   isScrolled: boolean;
@@ -9,22 +9,22 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation(); // get current path
-  
-  // Close mobile menu when route changes
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const location = useLocation();
+
   useEffect(() => {
     setIsOpen(false);
+    setDropdownOpen(false);
   }, [location.pathname]);
 
-  // Close on Escape or click outside
   useEffect(() => {
     const closeOnEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setIsOpen(false);
     };
     const closeOnClickOutside = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (!target.closest('#mobile-menu') && !target.closest('#menu-button')) {
-        setIsOpen(false);
+      if (!target.closest('#mobile-menu') && !target.closest('#menu-button') && !target.closest('#solutions-dropdown')) {
+        setDropdownOpen(false);
       }
     };
     document.addEventListener('keydown', closeOnEscape);
@@ -35,22 +35,26 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
     };
   }, []);
 
-  // Prevent body scroll when open
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [isOpen]);
 
+  // Direct links
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Services', path: '/services' },
+    { name: 'News', path: '/news' },
+    { name: 'About', path: '/about' },
+    { name: 'Contact', path: '/contact' },
+  ];
+
+  // Dropdown links
+  const solutionsLinks = [
     { name: 'Smart Anganwadi', path: '/smart-anganwadi' },
     { name: 'Courses', path: '/courses' },
-    { name: 'About', path: '/about' },
-    { name: 'News', path: '/news' },
-    { name: 'Blog', path: '/blog' },
-    { name: 'Contact', path: '/contact' },
     { name: 'Robot Maze', path: '/robot-maze' },
+    { name: 'Blog', path: '/blog' },
   ];
 
   const navbarClass = isScrolled 
@@ -84,6 +88,34 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                 {link.name}
               </NavLink>
             ))}
+            {/* Solutions Dropdown */}
+            <div className="relative" id="solutions-dropdown">
+              <button
+                className={`px-4 py-2 mx-1 rounded-md flex items-center gap-1 transition-colors ${dropdownOpen ? 'text-primary-600 font-medium bg-primary-50' : 'text-gray-700 hover:text-primary-600 hover:bg-gray-100'}`}
+                onClick={() => setDropdownOpen((open) => !open)}
+                type="button"
+              >
+                Solutions <ChevronDown size={16} />
+              </button>
+              {dropdownOpen && (
+                <div className="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg z-50 py-2">
+                  {solutionsLinks.map((link) => (
+                    <NavLink
+                      key={link.path}
+                      to={link.path}
+                      className={({ isActive }) =>
+                        `block px-4 py-2 rounded-md transition-colors ${
+                          isActive ? 'bg-primary-50 text-primary-700 font-medium' : 'text-gray-700 hover:bg-primary-50 hover:text-primary-700'
+                        }`
+                      }
+                      onClick={() => setDropdownOpen(false)}
+                    >
+                      {link.name}
+                    </NavLink>
+                  ))}
+                </div>
+              )}
+            </div>
             <motion.a href="#get-started" className="btn btn-primary ml-4" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               Get Started
             </motion.a>
@@ -125,7 +157,6 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                     <span className="font-semibold">TeachMyRobot</span>
                   </div>
                 </div>
-                
                 <div className="flex-1 overflow-y-auto">
                   <div className="p-4 flex flex-col gap-1">
                     {navLinks.map((link) => (
@@ -144,9 +175,36 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                         {link.name}
                       </NavLink>
                     ))}
+                    {/* Solutions Dropdown for Mobile */}
+                    <div className="mt-2">
+                      <button
+                        className="w-full flex items-center justify-between px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 transition-colors duration-200"
+                        onClick={() => setDropdownOpen((open) => !open)}
+                        type="button"
+                      >
+                        Solutions <ChevronDown size={16} className={dropdownOpen ? 'rotate-180 transition-transform' : 'transition-transform'} />
+                      </button>
+                      {dropdownOpen && (
+                        <div className="ml-4 mt-1 flex flex-col gap-1">
+                          {solutionsLinks.map((link) => (
+                            <NavLink
+                              key={link.path}
+                              to={link.path}
+                              className={({ isActive }) =>
+                                `block px-4 py-2 rounded-md transition-colors ${
+                                  isActive ? 'bg-primary-50 text-primary-700 font-medium' : 'text-gray-700 hover:bg-primary-50 hover:text-primary-700'
+                                }`
+                              }
+                              onClick={() => { setIsOpen(false); setDropdownOpen(false); }}
+                            >
+                              {link.name}
+                            </NavLink>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
-
                 <div className="p-4 border-t border-gray-100">
                   <motion.a 
                     href="#get-started" 
