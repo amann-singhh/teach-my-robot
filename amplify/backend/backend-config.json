@@ -9,6 +9,22 @@
           ],
           "category": "function",
           "resourceName": "geminiProxy"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "authHandler"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "courseHandler"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -16,6 +32,16 @@
     }
   },
   "function": {
+    "authHandler": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "courseHandler": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "geminiProxy": {
       "build": true,
       "dependsOn": [],
@@ -24,6 +50,38 @@
     }
   },
   "parameters": {
+    "AMPLIFY_function_authHandler_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "authHandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_authHandler_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "authHandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_courseHandler_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "courseHandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_courseHandler_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "courseHandler"
+        }
+      ]
+    },
     "AMPLIFY_function_geminiProxy_deploymentBucketName": {
       "usedBy": [
         {

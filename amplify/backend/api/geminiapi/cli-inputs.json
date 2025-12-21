@@ -1,12 +1,26 @@
 {
-  "version": 1,
-  "paths": {
-    "/gemini": {
-      "name": "/gemini",
-      "lambdaFunction": "geminiProxy",
-      "permissions": {
-        "setting": "open"
-      }
+    "version": 1,
+    "paths": {
+        "/gemini": {
+            "name": "/gemini",
+            "lambdaFunction": "geminiProxy",
+            "permissions": {
+                "setting": "open"
+            }
+        },
+        "/auth/login": {
+            "name": "/auth/login",
+            "lambdaFunction": "authHandler",
+            "permissions": {
+                "setting": "open"
+            }
+        },
+        "/courses": {
+            "name": "/courses",
+            "lambdaFunction": "courseHandler",
+            "permissions": {
+                "setting": "open"
+            }
+        }
     }
-  }
 }
