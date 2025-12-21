@@ -2,6 +2,11 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
+// Auth
+import { AuthProvider } from './context/AuthContext';
+import LoginPage from './pages/LoginPage';
+import ProtectedRoute from './components/auth/ProtectedRoute';
+
 // Layouts
 import MainLayout from './layouts/MainLayout';
 
@@ -20,12 +25,26 @@ import CoursePage from './pages/CoursePage';
 import CourseDetailPage from './pages/CourseDetailPage';
 import SmartAnganwadiPage from './pages/SmartAnganwadiPage';
 
+// Protected Pages
+import CoursePlayerPage from './pages/CoursePlayerPage';
+
 const AnimatedRoutes = () => {
   const location = useLocation();
   
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
+        {/* Public Routes */}
+        <Route path="/login" element={<LoginPage />} />
+        
+        {/* Protected Routes */}
+        <Route path="/course-player/:id" element={
+          <ProtectedRoute>
+            <CoursePlayerPage />
+          </ProtectedRoute>
+        } />
+
+        {/* Layout Routes */}
         <Route path="/" element={<MainLayout />}>
           <Route index element={<HomePage />} />
           <Route path="services" element={<ServicesPage />} />
@@ -48,9 +67,11 @@ const AnimatedRoutes = () => {
 
 function App() {
   return (
-    <Router>
-      <AnimatedRoutes />
-    </Router>
+    <AuthProvider>
+      <Router>
+        <AnimatedRoutes />
+      </Router>
+    </AuthProvider>
   );
 }
 

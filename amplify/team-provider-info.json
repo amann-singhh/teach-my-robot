@@ -17,6 +17,14 @@
           "geminiApiKey": "AIzaSyDU0J4JQewLJNUwPD3adX3EDPurWiMpIeg",
           "deploymentBucketName": "amplify-teachmyrobot-main-88348-deployment",
           "s3Key": "amplify-builds/geminiProxy-3435646f5844356c4e71-build.zip"
+        },
+        "authHandler": {
+          "deploymentBucketName": "amplify-teachmyrobot-main-88348-deployment",
+          "s3Key": "amplify-builds/authHandler-70485a6b31725142592f-build.zip"
+        },
+        "courseHandler": {
+          "deploymentBucketName": "amplify-teachmyrobot-main-88348-deployment",
+          "s3Key": "amplify-builds/courseHandler-73796c46675639414635-build.zip"
         }
       },
       "api": {

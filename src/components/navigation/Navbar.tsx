@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, Link, useLocation } from 'react-router-dom';
+import { NavLink, Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Bot, Menu, X, ChevronDown } from 'lucide-react';
+import { Bot, Menu, X, ChevronDown, User, LogOut } from 'lucide-react';
+import { useAuth } from '../../context/AuthContext';
 
 interface NavbarProps {
   isScrolled: boolean;
@@ -11,6 +12,8 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const location = useLocation();
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
 
   useEffect(() => {
     setIsOpen(false);
@@ -23,7 +26,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
     };
     const closeOnClickOutside = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (!target.closest('#mobile-menu') && !target.closest('#menu-button') && !target.closest('#solutions-dropdown')) {
+      if (!target.closest('#mobile-menu') && !target.closest('#menu-button') && !target.closest('#solutions-dropdown') && !target.closest('#user-dropdown')) {
         setDropdownOpen(false);
       }
     };
@@ -39,6 +42,11 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
     document.body.style.overflow = isOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [isOpen]);
+
+  const handleLogout = () => {
+    logout();
+    navigate('/');
+  };
 
   // Direct links
   const navLinks = [
@@ -116,9 +124,31 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                 </div>
               )}
             </div>
-            <motion.a href="#get-started" className="btn btn-primary ml-4" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              Get Started
-            </motion.a>
+
+            {user ? (
+              <div className="flex items-center gap-4 ml-4">
+                <span className="text-sm font-medium text-gray-700">Hi, {user.name || 'Student'}</span>
+                <button 
+                  onClick={handleLogout}
+                  className="p-2 text-red-600 hover:bg-red-50 rounded-full transition-colors"
+                  title="Logout"
+                >
+                  <LogOut size={20} />
+                </button>
+              </div>
+            ) : (
+              <div className="flex items-center gap-2 ml-4">
+                <Link 
+                  to="/login"
+                  className="px-4 py-2 text-primary-600 font-medium hover:bg-primary-50 rounded-md transition-colors"
+                >
+                  Log In
+                </Link>
+                <motion.a href="#get-started" className="btn btn-primary" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  Get Started
+                </motion.a>
+              </div>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -175,9 +205,8 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                         {link.name}
                       </NavLink>
                     ))}
-                    {/* Solutions Dropdown for Mobile */}
                     <div className="mt-2">
-                      <button
+                       <button
                         className="w-full flex items-center justify-between px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 transition-colors duration-200"
                         onClick={() => setDropdownOpen((open) => !open)}
                         type="button"
@@ -205,15 +234,33 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                     </div>
                   </div>
                 </div>
-                <div className="p-4 border-t border-gray-100">
-                  <motion.a 
-                    href="#get-started" 
-                    className="block w-full px-4 py-3 text-center rounded-lg bg-primary-600 text-white font-medium hover:bg-primary-700 transition-colors duration-200" 
-                    whileTap={{ scale: 0.98 }}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Get Started
-                  </motion.a>
+                <div className="p-4 border-t border-gray-100 space-y-3">
+                  {user ? (
+                    <button 
+                      onClick={() => { handleLogout(); setIsOpen(false); }}
+                      className="block w-full px-4 py-3 text-center rounded-lg bg-red-50 text-red-600 font-medium hover:bg-red-100 transition-colors duration-200" 
+                    >
+                      Logout ({user.name})
+                    </button>
+                  ) : (
+                    <>
+                      <Link 
+                        to="/login"
+                        className="block w-full px-4 py-3 text-center rounded-lg bg-gray-50 text-gray-700 font-medium hover:bg-gray-100 transition-colors duration-200"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        Log In
+                      </Link>
+                      <motion.a 
+                        href="#get-started" 
+                        className="block w-full px-4 py-3 text-center rounded-lg bg-primary-600 text-white font-medium hover:bg-primary-700 transition-colors duration-200" 
+                        whileTap={{ scale: 0.98 }}
+                        onClick={() => setIsOpen(false)}
+                      >
+                        Get Started
+                      </motion.a>
+                    </>
+                  )}
                 </div>
               </div>
             </motion.div>
