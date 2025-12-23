@@ -18,9 +18,13 @@ import NotFoundPage from "./pages/NotFoundPage";
 import RobotMazeGame from "./pages/RobotMazeGame";
 import CoursePage from "./pages/CoursePage";
 import CourseDetailPage from "./pages/CourseDetailPage";
-import ChapterDetailPage from "./pages/ChapterDetailPage"; // ✅ ADD THIS
-import SmartAnganwadiPage from "./pages/SmartAnganwadiPage";
+import ChapterDetailPage from "./pages/ChapterDetailPage";
 import VideoPlayerPage from "./pages/VideoPlayerPage";
+import SmartAnganwadiPage from "./pages/SmartAnganwadiPage";
+import LoginPage from "./pages/LoginPage";
+
+// ✅ PROTECTED ROUTE
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -32,23 +36,6 @@ const AnimatedRoutes = () => {
           <Route index element={<HomePage />} />
 
           <Route path="services" element={<ServicesPage />} />
-
-          {/* ✅ COURSES ROUTES */}
-          <Route path="courses">
-            <Route index element={<CoursePage />} />
-            <Route path=":courseId" element={<CourseDetailPage />} />
-
-            {/* ✅ NEW CHAPTER ROUTE */}
-            <Route
-              path=":courseId/chapters/:chapterName"
-              element={<ChapterDetailPage />}
-            />
-            <Route
-              path=":courseId/chapters/:chapterName/videos/:videoName"
-              element={<VideoPlayerPage />}
-            />
-          </Route>
-
           <Route path="contact" element={<ContactPage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="news" element={<NewsPage />} />
@@ -57,6 +44,47 @@ const AnimatedRoutes = () => {
           <Route path="blog/:id" element={<BlogPostPage />} />
           <Route path="robot-maze" element={<RobotMazeGame />} />
           <Route path="smart-anganwadi" element={<SmartAnganwadiPage />} />
+
+          {/* 🔐 PROTECTED COURSES */}
+          <Route
+            path="courses"
+            element={
+              <ProtectedRoute>
+                <CoursePage />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="courses/:courseId"
+            element={
+              <ProtectedRoute>
+                <CourseDetailPage />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="courses/:courseId/chapters/:chapterName"
+            element={
+              <ProtectedRoute>
+                <ChapterDetailPage />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="courses/:courseId/chapters/:chapterName/videos/:videoName"
+            element={
+              <ProtectedRoute>
+                <VideoPlayerPage />
+              </ProtectedRoute>
+            }
+          />
+
+          {/* AUTH */}
+          <Route path="login" element={<LoginPage />} />
+
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
