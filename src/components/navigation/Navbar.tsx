@@ -11,10 +11,9 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+
   const location = useLocation();
   const navigate = useNavigate();
-
-  // ✅ Cognito auth state
   const { user, authStatus, signOut } = useAuthenticator();
 
   const handleLogout = async () => {
@@ -22,16 +21,19 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
     navigate("/login");
   };
 
+  // Close menus on route change
   useEffect(() => {
     setIsOpen(false);
     setDropdownOpen(false);
   }, [location.pathname]);
 
+  // Escape + outside click
   useEffect(() => {
-    const closeOnEscape = (e: KeyboardEvent) => {
+    const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") setIsOpen(false);
     };
-    const closeOnClickOutside = (e: MouseEvent) => {
+
+    const handleClickOutside = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       if (
         !target.closest("#mobile-menu") &&
@@ -41,14 +43,17 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
         setDropdownOpen(false);
       }
     };
-    document.addEventListener("keydown", closeOnEscape);
-    document.addEventListener("mousedown", closeOnClickOutside);
+
+    document.addEventListener("keydown", handleEscape);
+    document.addEventListener("mousedown", handleClickOutside);
+
     return () => {
-      document.removeEventListener("keydown", closeOnEscape);
-      document.removeEventListener("mousedown", closeOnClickOutside);
+      document.removeEventListener("keydown", handleEscape);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
+  // Lock scroll on mobile open
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
     return () => {
@@ -56,8 +61,10 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
     };
   }, [isOpen]);
 
+  // ✅ UPDATED NAV LINKS (Products added)
   const navLinks = [
     { name: "Home", path: "/" },
+    { name: "Products", path: "/products" }, // 🔥 NEW
     { name: "Services", path: "/services" },
     { name: "News", path: "/news" },
     { name: "About", path: "/about" },
@@ -79,10 +86,11 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
     <header className={`sticky top-0 z-50 ${navbarClass}`}>
       <nav className="container-custom">
         <div className="flex items-center justify-between">
+
           {/* Logo */}
           <Link
             to="/"
-            className="flex items-center gap-2 text-xl font-bold text-primary-600 hover:text-primary-700"
+            className="flex items-center gap-2 text-xl font-bold text-primary-600"
           >
             <Bot size={28} />
             <span>TeachMyRobot</span>
@@ -95,9 +103,9 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                 key={link.path}
                 to={link.path}
                 className={({ isActive }) =>
-                  `px-4 py-2 mx-1 rounded-md transition-colors ${
+                  `px-4 py-2 rounded-md transition ${
                     isActive
-                      ? "text-primary-600 font-medium bg-primary-50"
+                      ? "text-primary-600 bg-primary-50 font-medium"
                       : "text-gray-700 hover:text-primary-600 hover:bg-gray-100"
                   }`
                 }
@@ -109,31 +117,24 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
             {/* Solutions Dropdown */}
             <div className="relative" id="solutions-dropdown">
               <button
-                className={`px-4 py-2 mx-1 rounded-md flex items-center gap-1 transition-colors ${
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+                className={`px-4 py-2 rounded-md flex items-center gap-1 ${
                   dropdownOpen
-                    ? "text-primary-600 font-medium bg-primary-50"
+                    ? "text-primary-600 bg-primary-50"
                     : "text-gray-700 hover:text-primary-600 hover:bg-gray-100"
                 }`}
-                onClick={() => setDropdownOpen((open) => !open)}
-                type="button"
               >
                 Solutions <ChevronDown size={16} />
               </button>
 
               {dropdownOpen && (
-                <div className="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg z-50 py-2">
+                <div className="absolute mt-2 w-48 bg-white rounded-lg shadow-lg py-2">
                   {solutionsLinks.map((link) => (
                     <NavLink
                       key={link.path}
                       to={link.path}
-                      className={({ isActive }) =>
-                        `block px-4 py-2 rounded-md transition-colors ${
-                          isActive
-                            ? "bg-primary-50 text-primary-700 font-medium"
-                            : "text-gray-700 hover:bg-primary-50 hover:text-primary-700"
-                        }`
-                      }
                       onClick={() => setDropdownOpen(false)}
+                      className="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-700"
                     >
                       {link.name}
                     </NavLink>
@@ -142,7 +143,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
               )}
             </div>
 
-            {/* ✅ AUTH SECTION (DESKTOP) */}
+            {/* Auth */}
             {authStatus === "authenticated" ? (
               <div className="flex items-center gap-3 ml-4">
                 <span className="text-sm text-gray-700">
@@ -150,7 +151,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                 </span>
                 <button
                   onClick={handleLogout}
-                  className="px-4 py-2 rounded-md bg-red-500 text-white hover:bg-red-600"
+                  className="px-4 py-2 bg-red-500 text-white rounded-md"
                 >
                   Logout
                 </button>
@@ -162,10 +163,10 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
             )}
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Button */}
           <button
             id="menu-button"
-            className="md:hidden p-2 rounded-md text-gray-700 hover:text-primary-600 hover:bg-gray-100"
+            className="md:hidden p-2"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -176,7 +177,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
         {isOpen && (
           <div className="md:hidden">
             <motion.div
-              className="fixed inset-0 bg-black/40 backdrop-blur-sm z-30"
+              className="fixed inset-0 bg-black/40 z-30"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               onClick={() => setIsOpen(false)}
@@ -187,49 +188,46 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
               className="fixed right-0 top-16 w-full max-w-sm bg-white h-[calc(100vh-4rem)] z-40 shadow-xl"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
-              transition={{ type: "spring", damping: 25, stiffness: 200 }}
             >
-              <div className="flex flex-col h-full">
-                <div className="flex-1 overflow-y-auto p-4">
-                  {navLinks.map((link) => (
-                    <NavLink
-                      key={link.path}
-                      to={link.path}
-                      onClick={() => setIsOpen(false)}
-                      className="block px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-50"
-                    >
-                      {link.name}
-                    </NavLink>
-                  ))}
-                </div>
+              <div className="p-4">
+                {navLinks.map((link) => (
+                  <NavLink
+                    key={link.path}
+                    to={link.path}
+                    onClick={() => setIsOpen(false)}
+                    className="block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg"
+                  >
+                    {link.name}
+                  </NavLink>
+                ))}
+              </div>
 
-                {/* ✅ AUTH SECTION (MOBILE) */}
-                <div className="p-4 border-t">
-                  {authStatus === "authenticated" ? (
-                    <>
-                      <p className="text-sm text-gray-700 mb-3 text-center">
-                        {user?.signInDetails?.loginId}
-                      </p>
-                      <button
-                        onClick={() => {
-                          handleLogout();
-                          setIsOpen(false);
-                        }}
-                        className="w-full px-4 py-3 rounded-lg bg-red-500 text-white"
-                      >
-                        Logout
-                      </button>
-                    </>
-                  ) : (
-                    <NavLink
-                      to="/login"
-                      onClick={() => setIsOpen(false)}
-                      className="block w-full px-4 py-3 text-center rounded-lg bg-primary-600 text-white"
+              {/* Auth Mobile */}
+              <div className="p-4 border-t">
+                {authStatus === "authenticated" ? (
+                  <>
+                    <p className="text-sm text-center mb-2">
+                      {user?.signInDetails?.loginId}
+                    </p>
+                    <button
+                      onClick={() => {
+                        handleLogout();
+                        setIsOpen(false);
+                      }}
+                      className="w-full bg-red-500 text-white py-3 rounded-lg"
                     >
-                      Login
-                    </NavLink>
-                  )}
-                </div>
+                      Logout
+                    </button>
+                  </>
+                ) : (
+                  <NavLink
+                    to="/login"
+                    onClick={() => setIsOpen(false)}
+                    className="block text-center bg-primary-600 text-white py-3 rounded-lg"
+                  >
+                    Login
+                  </NavLink>
+                )}
               </div>
             </motion.div>
           </div>
