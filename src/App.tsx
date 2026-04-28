@@ -23,6 +23,7 @@ import VideoPlayerPage from "./pages/VideoPlayerPage";
 import SmartAnganwadiPage from "./pages/SmartAnganwadiPage";
 import LoginPage from "./pages/LoginPage";
 import ProductsPage from "./pages/ProductsPage";
+import ProductDetailPage from "./pages/ProductDetailPage";
 
 // ✅ PROTECTED ROUTE
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -46,6 +47,7 @@ const AnimatedRoutes = () => {
           <Route path="robot-maze" element={<RobotMazeGame />} />
           <Route path="smart-anganwadi" element={<SmartAnganwadiPage />} />
           <Route path="/products" element={<ProductsPage />} />
+          <Route path="/products/:id" element={<ProductDetailPage />} />
 
           {/* 🔐 PROTECTED COURSES */}
           <Route

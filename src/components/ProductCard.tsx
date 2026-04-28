@@ -6,7 +6,7 @@ const ProductCard = ({ product }: { product: Product }) => {
     <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100 flex flex-col h-full">
       <div className="h-64 overflow-hidden relative p-6 bg-gray-50 flex items-center justify-center">
         <img
-          src={product.image}
+          src={product.images[0]}
           alt={product.title}
           className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500"
         />
@@ -14,9 +14,9 @@ const ProductCard = ({ product }: { product: Product }) => {
       <div className="p-6 flex flex-col flex-grow">
         <h3 className="text-xl font-bold mb-2">{product.title}</h3>
         <p className="text-gray-600 mb-6 flex-grow">
-          {product.description?.length > 100 
-            ? `${product.description.substring(0, 100)}...` 
-            : product.description}
+          {product.shortDescription?.length > 100 
+            ? `${product.shortDescription.substring(0, 100)}...` 
+            : product.shortDescription}
         </p>
         
         <div className="flex items-center justify-between mt-auto">

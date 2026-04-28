@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, Link, useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Bot, Menu, X, ChevronDown } from "lucide-react";
+import { Bot, Menu, X, ChevronDown, ShoppingCart } from "lucide-react";
 import { useAuthenticator } from "@aws-amplify/ui-react";
+import { useCart } from "../../context/CartContext";
 
 interface NavbarProps {
   isScrolled: boolean;
@@ -15,6 +16,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const { user, authStatus, signOut } = useAuthenticator();
+  const { itemCount } = useCart();
 
   const handleLogout = async () => {
     await signOut();
@@ -145,7 +147,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
 
             {/* Auth */}
             {authStatus === "authenticated" ? (
-              <div className="flex items-center gap-3 ml-4">
+              <div className="flex items-center gap-3 ml-4 border-l border-gray-200 pl-4">
                 <span className="text-sm text-gray-700">
                   {user?.signInDetails?.loginId}
                 </span>
@@ -157,20 +159,42 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                 </button>
               </div>
             ) : (
-              <NavLink to="/login" className="btn btn-primary ml-4">
-                Login
-              </NavLink>
+              <div className="border-l border-gray-200 pl-4 ml-4">
+                <NavLink to="/login" className="btn btn-primary">
+                  Login
+                </NavLink>
+              </div>
             )}
+
+            {/* Cart Icon */}
+            <button className="relative p-2 ml-2 text-gray-700 hover:text-primary-600 transition-colors">
+              <ShoppingCart size={24} />
+              {itemCount > 0 && (
+                <span className="absolute top-0 right-0 inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-red-500 rounded-full border-2 border-white">
+                  {itemCount}
+                </span>
+              )}
+            </button>
           </div>
 
-          {/* Mobile Button */}
-          <button
-            id="menu-button"
-            className="md:hidden p-2"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile Buttons */}
+          <div className="md:hidden flex items-center gap-4">
+            <button className="relative p-1 text-gray-700">
+              <ShoppingCart size={24} />
+              {itemCount > 0 && (
+                <span className="absolute -top-1 -right-1 inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-red-500 rounded-full border-2 border-white">
+                  {itemCount}
+                </span>
+              )}
+            </button>
+            <button
+              id="menu-button"
+              className="p-1"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Nav */}

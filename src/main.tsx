@@ -5,12 +5,15 @@ import { Authenticator } from "@aws-amplify/ui-react";
 import App from "./App";
 import "./index.css";
 import "./awsConfig";
+import { CartProvider } from "./context/CartContext";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
       <Authenticator.Provider>
-        <App />
+        <CartProvider>
+          <App />
+        </CartProvider>
       </Authenticator.Provider>
     </BrowserRouter>
   </StrictMode>
