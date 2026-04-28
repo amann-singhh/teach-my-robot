@@ -1,51 +1,50 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import PageTransition from '../components/utility/PageTransition';
-import { Award, TrendingUp, Lightbulb, Target, Heart, Users } from 'lucide-react';
+import { Award, TrendingUp, Lightbulb, Target, Heart, Users, BookOpen } from 'lucide-react';
 
 const AboutPage: React.FC = () => {
-
   return (
     <PageTransition>
       {/* Hero Section */}
       <section className="relative text-white py-20 md:py-28 overflow-hidden">
-  {/* Background Video */}
-  <video
-    className="absolute top-0 left-0 w-full h-full object-cover z-0"
-    autoPlay
-    loop
-    muted
-    playsInline
-  >
-    <source src="/teachmyrobot-hero.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
+        {/* Background Video */}
+        <video
+          className="absolute top-0 left-0 w-full h-full object-cover z-0"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src="/teachmyrobot-hero.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
 
-  {/* Overlay to darken video */}
-  <div className="absolute top-0 left-0 w-full h-full bg-primary-900/80 z-10" />
+        {/* Overlay */}
+        <div className="absolute top-0 left-0 w-full h-full bg-primary-900/80 z-10" />
 
-  {/* Foreground Content */}
-  <div className="container-custom relative z-20">
-    <div className="max-w-3xl mx-auto text-center">
-      <motion.h1 
-        className="text-4xl md:text-5xl font-bold mb-6"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2 }}
-      >
-        About TeachMyRobot
-      </motion.h1>
-      <motion.p 
-        className="text-xl text-blue-100"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4 }}
-      >
-        Building the next generation of innovators through engaging, hands-on STEM education.
-      </motion.p>
-    </div>
-  </div>
-</section>
+        {/* Content */}
+        <div className="container-custom relative z-20">
+          <div className="max-w-3xl mx-auto text-center">
+            <motion.h1
+              className="text-4xl md:text-5xl font-bold mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+            >
+              About TeachMyRobot
+            </motion.h1>
+            <motion.p
+              className="text-xl text-blue-100"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+            >
+              Building the next generation of innovators through engaging, hands-on STEM education.
+            </motion.p>
+          </div>
+        </div>
+      </section>
 
       {/* Our Story */}
       <section className="section bg-white">
@@ -54,28 +53,88 @@ const AboutPage: React.FC = () => {
             <div className="order-2 lg:order-1">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Story</h2>
               <p className="text-lg text-gray-700 mb-6">
-                TeachMyRobot was founded in 2020 with a simple mission: make high-quality robotics and coding education accessible to all students, regardless of background or prior experience.
+                TeachMyRobot was founded with a simple but powerful belief: every child deserves access to quality education that can shape their future.
               </p>
               <p className="text-lg text-gray-700 mb-6">
-                What began as a small after-school program has grown into a comprehensive educational organization serving thousands of students across multiple programs and platforms.
+                What began as an effort to make robotics and coding more engaging for students has grown into a larger mission to create learning experiences that are practical, inspiring, and meaningful.
               </p>
               <p className="text-lg text-gray-700">
-                Our approach combines cutting-edge technology with proven educational methods, creating engaging learning experiences that inspire curiosity, build confidence, and develop crucial skills for the future.
+                Our work combines technology with education to help students build confidence, curiosity, problem-solving ability, and the skills needed to thrive in a changing world.
               </p>
             </div>
             <div className="order-1 lg:order-2">
               <div className="relative">
                 <div className="relative h-96 rounded-lg overflow-hidden shadow-xl">
-                  <img 
-                    src="https://images.pexels.com/photos/8566428/pexels-photo-8566428.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-                    alt="Students working with robotics" 
+                  <img
+                    src="https://images.pexels.com/photos/8566428/pexels-photo-8566428.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="Students working with robotics"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="absolute -bottom-4 -left-4 bg-white p-4 rounded-lg shadow-lg">
-                  <p className="font-bold">Est. 2020</p>
-                  <p className="text-gray-600">5+ years of innovation</p>
+                  <p className="font-bold">Built with purpose</p>
+                  <p className="text-gray-600">Education that creates opportunity</p>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Founder Story */}
+      <section className="section bg-primary-50">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+              <div className="md:col-span-1 flex flex-col gap-6">
+                <div className="bg-white rounded-2xl shadow-md p-6 text-center">
+                  <h3 className="text-2xl font-bold mb-2">Ayaan Malhotra</h3>
+                  <p className="text-gray-600 font-medium">Founder, TeachMyRobot</p>
+                </div>
+                
+                <div className="rounded-2xl shadow-md overflow-hidden bg-white group">
+                  <div className="relative overflow-hidden">
+                    <img 
+                      src="/images/ayaan-seminar.jpg" 
+                      alt="Ayaan Malhotra at AI & Robotics Seminar" 
+                      className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                </div>
+
+                <div className="rounded-2xl shadow-md overflow-hidden bg-white group">
+                  <div className="relative overflow-hidden">
+                    <img 
+                      src="/images/ayaan-students.jpg" 
+                      alt="Ayaan Malhotra with students" 
+                      className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="md:col-span-2 bg-white rounded-2xl shadow-md p-8">
+                <h2 className="text-3xl font-bold mb-5">Why TeachMyRobot Was Founded</h2>
+                <p className="text-lg text-gray-700 mb-5">
+                  Ayaan Malhotra’s journey across schools in different parts of the world opened his eyes to one truth that stayed with him: education can either widen the gap or close it.
+                </p>
+                <p className="text-lg text-gray-700 mb-5">
+                  From classrooms in Japan and the USA to schools in Tanzania, from well-resourced private schools to government schools, and from tier 1 cities to tier 2 and tier 3 cities, he saw how unequal access to quality learning can shape a child’s confidence, ambition, and future.
+                </p>
+                <p className="text-lg text-gray-700 mb-5">
+                  What moved him most was not just the difference in infrastructure, but the difference in opportunity. Some children were surrounded by tools, mentors, and exposure. Others had talent, curiosity, and determination, but not the same support.
+                </p>
+                <p className="text-lg text-gray-700 mb-5">
+                  That contrast became impossible to ignore. It made one thing clear to him: if quality education can transform one life, then making it accessible can transform entire families, communities, and eventually nations.
+                </p>
+                <div className="border-l-4 border-primary-500 pl-5 py-1">
+                  <p className="text-lg italic text-gray-800">
+                    “When a child receives quality education, a family gains hope. When many children receive it, a nation gains strength.”
+                  </p>
+                </div>
+                <p className="text-lg text-gray-700 mt-5">
+                  TeachMyRobot was born from that belief — to narrow the gap, make learning more meaningful, and give every student the chance to imagine a bigger future.
+                </p>
               </div>
             </div>
           </div>
@@ -88,12 +147,11 @@ const AboutPage: React.FC = () => {
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="section-title">Our Mission & Values</h2>
             <p className="text-xl text-gray-600">
-              We're guided by a commitment to educational excellence and a belief in technology's power to transform lives.
+              We’re guided by a commitment to educational excellence and a belief in technology’s power to transform lives.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            {/* Mission */}
             <div className="bg-white rounded-lg shadow-md p-8">
               <div className="w-16 h-16 bg-primary-100 rounded-full text-primary-600 flex items-center justify-center mb-6 mx-auto">
                 <Target size={32} />
@@ -104,7 +162,6 @@ const AboutPage: React.FC = () => {
               </p>
             </div>
 
-            {/* Vision */}
             <div className="bg-white rounded-lg shadow-md p-8">
               <div className="w-16 h-16 bg-secondary-100 rounded-full text-secondary-600 flex items-center justify-center mb-6 mx-auto">
                 <Lightbulb size={32} />
@@ -116,7 +173,6 @@ const AboutPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Values */}
           <h3 className="text-2xl font-bold mb-8 text-center">Our Core Values</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-white rounded-lg p-6 shadow-md">
@@ -192,7 +248,7 @@ const AboutPage: React.FC = () => {
               <div className="md:w-2/3">
                 <h3 className="text-2xl font-bold mb-4">Community Commitment</h3>
                 <p className="text-gray-700 mb-4">
-                  We're dedicated to making STEM education accessible to underserved communities. Through our scholarship program and community initiatives, we've provided free or reduced-cost programming to over 2,500 students from low-income backgrounds.
+                  We’re dedicated to making STEM education accessible to underserved communities. Through our scholarship program and community initiatives, we’ve provided free or reduced-cost programming to over 2,500 students from low-income backgrounds.
                 </p>
                 <p className="text-gray-700">
                   Our goal is to ensure all students have the opportunity to develop crucial technology skills, regardless of socioeconomic status, gender, or prior experience with technology.
@@ -278,7 +334,6 @@ const AboutPage: React.FC = () => {
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12">
-            {/* Partner logos would go here */}
             <div className="bg-gray-100 rounded-lg h-32 flex items-center justify-center p-6">
               <div className="text-gray-600 font-semibold text-center">Education Foundation</div>
             </div>

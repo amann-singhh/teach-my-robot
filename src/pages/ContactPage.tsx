@@ -102,8 +102,10 @@ const ContactPage: React.FC = () => {
                   <div>
                     <h3 className="text-lg font-semibold mb-1">Our Location</h3>
                     <address className="not-italic text-gray-600">
-                      123 Innovation Avenue<br />
-                      Tech City, TC 10101
+                      Venture studio Incubation, Teachers Campus,<br />
+                      AG, Shree Dada Jinanad Suri Marg,<br />
+                      near HL College, University Area,<br />
+                      Ahmedabad, Gujrat, 380009
                     </address>
                   </div>
                 </div>
@@ -279,7 +281,9 @@ const ContactPage: React.FC = () => {
             <div className="w-full h-full flex items-center justify-center text-gray-600">
               <div className="text-center">
                 <MapPin size={48} className="mx-auto mb-4 text-primary-500" />
-                <p className="text-xl font-semibold">123 Innovation Avenue, Tech City, TC 10101</p>
+                <p className="text-xl font-semibold px-4">
+                  Venture studio Incubation, Teachers Campus, AG, Shree Dada Jinanad Suri Marg, near HL College, University Area, Ahmedabad, Gujrat, 380009
+                </p>
                 <p className="mt-2">Interactive map would be displayed here</p>
               </div>
             </div>
